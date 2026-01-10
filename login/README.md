@@ -1,17 +1,18 @@
-# Modern 3D Login & Registration UI
+# Modern Login & Registration UI
 
-A premium, futuristic login and registration interface built with React, shadcn/ui, Tailwind CSS, and Framer Motion. Features stunning 3D glassmorphism effects, smooth animations, and a responsive design.
+A clean, modern login and registration interface built with React, shadcn/ui, Tailwind CSS, and Framer Motion. Features smooth Magic UI-style animations, dark/light mode toggle, and a responsive design.
 
 ## ✨ Features
 
-- **3D Glassmorphism Cards** - Beautiful frosted glass effect with depth and shadows
-- **Smooth 3D Animations** - Powered by Framer Motion with hover effects and transitions
-- **Gradient Background** - Animated gradient background with floating abstract shapes
+- **Dark/Light Mode** - Beautiful theme toggle with smooth transitions and system preference detection
+- **Smooth Animations** - Magic UI-style animations powered by Framer Motion
+- **Clean Design** - Minimal, modern interface with glassmorphism cards
 - **Responsive Design** - Fully responsive for desktop, tablet, and mobile devices
 - **Accessible** - Proper labels, keyboard navigation, and ARIA attributes
 - **Modern UI Components** - Built with shadcn/ui components styled with Tailwind CSS
 - **Form Validation** - Client-side validation for forms
 - **Password Visibility Toggle** - Show/hide password functionality
+- **Theme Persistence** - Theme preference saved in localStorage
 
 ## 🚀 Getting Started
 
@@ -47,15 +48,18 @@ npm run dev
 ```
 ├── src/
 │   ├── components/
-│   │   ├── ui/          # shadcn/ui components
-│   │   ├── Login.jsx    # Login form component
-│   │   └── Register.jsx # Registration form component
+│   │   ├── ui/              # shadcn/ui components
+│   │   ├── Login.jsx        # Login form component
+│   │   ├── Register.jsx     # Registration form component
+│   │   └── ThemeToggle.jsx  # Dark/light mode toggle
+│   ├── contexts/
+│   │   └── ThemeContext.jsx # Theme management context
 │   ├── lib/
-│   │   └── utils.js     # Utility functions
-│   ├── App.jsx          # Main app component
-│   ├── App.css          # Additional styles
-│   ├── index.css        # Global styles & Tailwind
-│   └── main.jsx         # Entry point
+│   │   └── utils.js         # Utility functions
+│   ├── App.jsx              # Main app component
+│   ├── App.css              # Additional styles
+│   ├── index.css            # Global styles & Tailwind
+│   └── main.jsx              # Entry point
 ├── index.html
 ├── package.json
 ├── tailwind.config.js
@@ -65,23 +69,24 @@ npm run dev
 
 ## 🎨 Design Features
 
-### 3D Effects
-- Glassmorphism cards with backdrop blur
-- Depth and shadow effects
-- 3D hover animations
-- Perspective transforms
+### Theme System
+- **Dark Mode** - Elegant dark theme with glassmorphism effects
+- **Light Mode** - Clean light theme with subtle shadows
+- **Smooth Transitions** - 300ms transitions between themes
+- **System Preference** - Automatically detects OS theme preference
+- **Persistent** - Theme preference saved in localStorage
 
 ### Animations
-- Smooth page transitions
-- Floating background shapes
-- Glowing orbs with pulsing effects
+- Smooth page transitions between login/register
 - Staggered form field animations
+- Hover effects on interactive elements
+- Theme toggle icon animations
 
 ### Visual Elements
-- Animated gradient background
-- Floating abstract shapes
-- Decorative grid pattern
-- Soft glowing accents
+- Glassmorphism cards with backdrop blur
+- Clean, minimal design
+- Consistent spacing and typography
+- Modern color scheme
 
 ## 📱 Responsive Breakpoints
 
@@ -91,50 +96,64 @@ npm run dev
 
 ## 🔧 Customization
 
-### Colors
-Edit the color scheme in `tailwind.config.js` and `src/index.css`:
+### Theme Colors
+Edit the color scheme in `src/index.css`:
 
-```javascript
-colors: {
-  primary: 'hsl(var(--primary))',
-  // ... more colors
+```css
+:root {
+  /* Light mode colors */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  /* ... more colors */
+}
+
+.dark {
+  /* Dark mode colors */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  /* ... more colors */
 }
 ```
 
 ### Animations
 Adjust animation timings and effects in component files using Framer Motion props.
 
-### Background
-Modify the gradient background in `src/index.css`:
-
-```css
-.gradient-bg {
-  background: linear-gradient(135deg, #667eea 0%, ...);
-}
-```
+### Components
+All UI components are in `src/components/ui/` and can be customized to match your design system.
 
 ## 📝 Form Fields
 
 ### Login Form
-- Email
+- Email Address
 - Password (with visibility toggle)
 - Remember me checkbox
 - Forgot password link
 
 ### Registration Form
-- Full Name
-- Email
+- Email Address
 - Password (with visibility toggle)
 - Confirm Password (with visibility toggle)
 
+## 🌓 Dark/Light Mode
+
+The theme toggle button is located in the top-right corner. Click it to switch between dark and light modes. The preference is automatically saved and will persist across page reloads.
+
+### Features
+- System preference detection on first visit
+- Smooth transitions between themes
+- Persistent theme storage
+- Animated toggle button
+
 ## 🎯 Future Enhancements
 
+- [x] Dark/light mode toggle
 - [ ] Form validation with error messages
 - [ ] Social login options
-- [ ] Dark/light mode toggle
 - [ ] Password strength indicator
 - [ ] Email verification flow
 - [ ] Backend integration
+- [ ] Loading states
+- [ ] Success/error notifications
 
 ## 📄 License
 
@@ -145,6 +164,7 @@ This project is open source and available under the MIT License.
 - [shadcn/ui](https://ui.shadcn.com/) for the component library
 - [Framer Motion](https://www.framer.com/motion/) for animations
 - [Tailwind CSS](https://tailwindcss.com/) for styling
+- [Lucide React](https://lucide.dev/) for icons
 
 ---
 
